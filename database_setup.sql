@@ -20,3 +20,23 @@ VALUES
 (6, 'Rahul', 'HR', 55000, 'Delhi'),
 (7, 'Ankit', 'IT', 65000, 'Indore'),
 (8, 'Priya', 'Sales', 75000, 'Bhopal');
+
+
+-- ==========================================
+-- Departments Table
+-- ==========================================
+
+DROP TABLE IF EXISTS departments;
+
+CREATE TABLE departments (
+    dept_id INT PRIMARY KEY,
+    department VARCHAR(30),
+    manager VARCHAR(50)
+);
+
+INSERT INTO departments (dept_id, department, manager)
+VALUES
+(1, 'Sales', 'Rajesh'),
+(2, 'IT', 'Sunil'),
+(3, 'HR', 'Kavita'),
+(4, 'Finance', 'Amit');
