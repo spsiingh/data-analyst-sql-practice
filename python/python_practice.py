@@ -69,3 +69,120 @@ for sale in sales:
         print(sale, "→ Medium")
     else:
         print(sale, "→ Low")
+
+
+
+# ==============================
+# Python Data Analysis Practice
+# Day 2
+# ==============================
+
+# Q1: Dictionary access
+
+employee = {
+    "name": "Amit",
+    "department": "Sales",
+    "salary": 50000,
+    "experience": 2
+}
+
+print("Q1 Salary:", employee["salary"])
+
+
+# Q2: Dictionary update
+
+employee["salary"] += 10000
+
+print("Q2 Updated Salary:", employee["salary"])
+
+
+# Q3: Enumerate
+
+sales = [50000, 80000, 30000, 70000, 40000]
+
+for index, sale in enumerate(sales):
+    print("Q3:", index, sale)
+
+
+# Q4: List comprehension
+
+filtered_sales = [sale for sale in sales if sale > 60000]
+
+print("Q4 Filtered Sales:", filtered_sales)
+
+
+# Q5: Function
+
+def calculate_average(sales):
+    total = sum(sales)
+    count = len(sales)
+    return total / count
+
+print("Q5 Average:", calculate_average(sales))
+
+
+# Q6: Function with condition
+
+def classify_sale(sale):
+    if sale > 60000:
+        return "High"
+    elif sale >= 40000:
+        return "Medium"
+    else:
+        return "Low"
+
+print("Q6 Classification:", classify_sale(80000))
+
+
+# Q7: Lambda
+
+increase = lambda x: x * 1.1
+
+print("Q7 Increased Sale:", increase(50000))
+
+
+# Q8: Sort employees by salary
+
+employees = [
+    {"name": "Amit", "salary": 50000},
+    {"name": "Ravi", "salary": 70000},
+    {"name": "Mohit", "salary": 80000},
+    {"name": "Neha", "salary": 60000}
+]
+
+sorted_employees = sorted(
+    employees,
+    key=lambda x: x["salary"],
+    reverse=True
+)
+
+print("Q8 Sorted Employees:")
+
+for employee in sorted_employees:
+    print(employee["name"], employee["salary"])
+
+
+# Q9: Pandas filtering
+
+import pandas as pd
+
+data = {
+    "Employee": ["Amit", "Ravi", "Mohit", "Neha"],
+    "Department": ["Sales", "IT", "IT", "Sales"],
+    "Salary": [50000, 70000, 80000, 60000]
+}
+
+df = pd.DataFrame(data)
+
+it_employees = df[df["Department"] == "IT"]
+
+print("Q9 IT Employees:")
+print(it_employees)
+
+
+# Q10: Pandas GroupBy
+
+department_average = df.groupby("Department")["Salary"].mean()
+
+print("Q10 Department-wise Average Salary:")
+print(department_average)
